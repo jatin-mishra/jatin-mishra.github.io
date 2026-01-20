@@ -1,0 +1,149 @@
+**MASTER PROMPT — Senior Engineer + Entrepreneur Portfolio Generator**
+
+Use this prompt as-is with any strong LLM or website builder AI.
+
+---
+
+**Prompt:**
+
+You are a world-class technical copywriter, startup founder, and senior software architect combined.
+
+Your task is to generate a **high-impact personal portfolio website** for a **Senior Backend Engineer + Entrepreneur**.
+The tone must be **professional, confident, precise, and commercially sharp** — like an experienced engineer who understands business, money, scale, and execution.
+No fluff. No buzzword stuffing. No junior energy.
+Write like a salesperson who knows the product is premium and scarce.
+
+### Core Objectives
+
+* Convey **senior engineer credibility**
+* Convey **entrepreneurial mindset**
+* Make it obvious why someone should **hire, contract, or collaborate**
+* Language should be concise, persuasive, and technically accurate
+* Assume the reader is a CTO, Founder, or Engineering Manager
+
+---
+
+## Website Structure & Content Requirements
+
+### 1. Hero Section
+
+* One strong headline positioning me as a **Senior Backend Engineer building real systems at scale**
+* One sub-headline emphasizing **distributed systems, fintech/ecommerce experience, and execution reliability**
+* Short positioning statement: real traffic, real money, real failure modes
+
+---
+
+### 2. Professional Summary
+
+Write a sharp narrative describing:
+
+* Senior backend engineer with strong system design instincts
+* Experience designing, building, and operating production-grade distributed systems
+* Comfort with ambiguity, scale, and business constraints
+* Entrepreneurial thinking: ownership, velocity, cost, reliability, leverage
+
+No resume tone. No “passionate about coding”.
+
+---
+
+### 3. Hire Me Section
+
+Clearly list engagement models with short descriptions:
+
+* **Contract** — short/medium-term execution on critical systems
+* **Mentorship** — architecture reviews, backend guidance, career/system thinking
+* **Full-Time** — ownership of backend platforms and critical paths
+* **Freelancing** — scoped, high-impact backend or AI system delivery
+
+Position this as premium availability, not desperation.
+
+---
+
+### 4. Expertise Section
+
+Structured, confident, and specific.
+
+**Backend Engineering**
+
+* Java (production-grade services, performance, concurrency)
+* Distributed Systems (consistency, latency, fault tolerance)
+* Kafka & Event-Driven Architectures
+* Databases & Internals (indexes, transactions, scaling trade-offs)
+* AWS (ECS, EC2, Lambda, S3, networking, observability)
+
+**Domain Experience**
+
+* E-commerce platforms
+
+  * Inventory systems
+  * Pricing engines
+  * Order management
+  * Payments and integrations
+
+**AI Systems**
+
+* AI agents for automation and workflows
+* Backend-first AI integrations
+* Tool-using agents, orchestration, reliability concerns
+
+Avoid listing tools without context. Always tie skill → outcome.
+
+---
+
+### 5. Projects Section (From Resume)
+
+Summarize projects from my resume into **clear case-study style blocks**:
+
+* Problem context
+* System design decisions
+* Scale or complexity involved
+* Business or reliability impact
+
+Do not repeat resume bullets verbatim. Convert into narrative proof of competence.
+
+---
+
+### 6. Personal Projects Section
+
+Create placeholders with professional framing (I will add links later):
+
+* **Backend Projects & Systems**
+  Large-scale services, internal platforms, system experiments
+
+* **AI Agents**
+  Autonomous workflows, engineering productivity tools, business automation
+
+* **Blogs / Writing**
+  Technical deep dives, system design thinking, engineering judgment
+
+Each should sound intentional and serious, not hobbyist.
+
+---
+
+### 7. Contact & Reach Out Section
+
+Clean, direct, business-ready.
+
+Include labeled links for:
+
+* Topmate
+* LinkedIn
+* WhatsApp
+* Email
+
+Tone: “If you need someone who can own backend systems end-to-end, reach out.”
+
+---
+
+### Writing Constraints
+
+* Professional, assertive language
+* No emojis
+* No motivational clichés
+* No “learning”, “journey”, or “passion” talk
+* Short paragraphs, strong verbs
+* Think: senior engineer pitching himself to serious buyers
+
+Deliver the full portfolio content in clean sections, ready to paste into a website.
+
+---
