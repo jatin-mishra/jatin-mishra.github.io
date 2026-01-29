@@ -130,7 +130,6 @@ export default function HomePage() {
           </div>
           <nav className="hidden md:flex items-center gap-6">
             <a href="#expertise" className="text-sm font-medium hover:text-primary transition-colors">Expertise</a>
-            <a href="#projects" className="text-sm font-medium hover:text-primary transition-colors">Systems</a>
             <a href="#hire" className="text-sm font-medium hover:text-primary transition-colors">Engagement</a>
             <Button asChild size="sm" className="rounded-full px-6" data-testid="link-nav-topmate">
               <a href={LINKS.topmate} target="_blank" rel="noreferrer">Contact</a>
