@@ -199,11 +199,11 @@
             <a class="btn btn--green" href="https://github.com/jatin-mishra/verdikt" target="_blank" rel="noreferrer">View on GitHub</a>
           </article>
           <article class="card card--project reveal">
-            <span class="badge badge--amber"><i class="badge__icon"></i>In progress · Java + Python</span>
-            <h3>RAG platform: indexer + retrieval service</h3>
-            <p>Two services built like production infrastructure, not a notebook. <strong>RagIndexer</strong> (Spring Boot + Temporal) runs durable indexing workflows: pull documents from S3, pluggable chunking strategies, embed, and write to both pgvector and an Elasticsearch keyword store. <strong>retrieval-service</strong> (FastAPI) does hybrid vector + keyword retrieval on bge-m3 embeddings and answers through the Anthropic SDK — with Verdikt's RAG judges as the quality gate.</p>
-            <code class="snippet">S3 → Temporal workflow → chunk → embed → pgvector + ES → hybrid retrieve → LLM → judge</code>
-            <a class="btn btn--amber" href="https://github.com/jatin-mishra/RagIndexer" target="_blank" rel="noreferrer">View indexer on GitHub</a>
+            <span class="badge badge--amber"><i class="badge__icon"></i>Working end to end · in progress · Java + Python</span>
+            <h3>Document-RAG: indexer + retrieval service</h3>
+            <p>A two-service RAG system built like production infrastructure, not a notebook — working end to end today, with the quality layer still being built out. <strong>indexer</strong> (Spring Boot + Temporal) runs durable indexing workflows: fetch the uploaded document, pluggable chunking, embed via Ollama, and write to both pgvector and an Elasticsearch keyword store. <strong>retrieval-service</strong> (FastAPI) handles upload to S3, hybrid vector + keyword retrieval, Jinja-templated prompts and answers through the Anthropic SDK. Next: Verdikt's RAG judges as the release gate.</p>
+            <code class="snippet">upload → S3 → Temporal workflow → chunk → embed → pgvector + ES → hybrid retrieve → LLM</code>
+            <a class="btn btn--amber" href="https://github.com/jatin-mishra/Document-Rag" target="_blank" rel="noreferrer">View on GitHub</a>
           </article>
         </div>
       </div>
