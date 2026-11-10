@@ -1,0 +1,53 @@
+---
+layout: default
+---
+{%- assign words = content | strip_html | number_of_words -%}
+{%- assign minutes = words | plus: 199 | divided_by: 200 -%}
+<article class="post">
+  <header class="post__header">
+    <div class="container container--narrow">
+      {%- assign sections = site.pages | where: "layout", "section" | sort: "url" %}
+      <p class="eyebrow crumbs post__crumbs">
+        {%- for s in sections -%}
+          {%- if page.url contains s.url -%}
+          <a href="{{ s.url }}">{{ s.title | escape }}</a>
+          {%- endif -%}
+        {%- endfor -%}
+      </p>
+      <p class="post__meta">
+        <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%-d %B %Y" }}</time>
+        <span aria-hidden="true">·</span>
+        <span>{{ minutes }} min read</span>
+      </p>
+      <h1>{{ page.title | escape }}</h1>
+      {%- if page.description %}
+      <p class="post__lead">{{ page.description | escape }}</p>
+      {%- endif %}
+      {%- if page.tags.size > 0 %}
+      <div class="chips post__tags">{% for tag in page.tags %}<span>{{ tag | escape }}</span>{% endfor %}</div>
+      {%- endif %}
+    </div>
+  </header>
+
+  <div class="container container--narrow prose">
+    {{ content }}
+  </div>
+
+  <footer class="container container--narrow post__footer">
+    <div class="post__nav">
+      {%- if page.previous %}
+      <a class="post__nav-link" href="{{ page.previous.url }}"><small>← Older</small><span>{{ page.previous.title | escape }}</span></a>
+      {%- else %}<span></span>{% endif %}
+      {%- if page.next %}
+      <a class="post__nav-link post__nav-link--next" href="{{ page.next.url }}"><small>Newer →</small><span>{{ page.next.title | escape }}</span></a>
+      {%- endif %}
+    </div>
+    <div class="callout post__callout">
+      <div>
+        <h2 class="h2--sm">Thoughts, corrections, <em>war stories?</em></h2>
+        <p>I'd like to hear them — reach out on LinkedIn or by email.</p>
+      </div>
+      <a class="btn btn--primary" href="/#contact">Get in touch</a>
+    </div>
+  </footer>
+</article>

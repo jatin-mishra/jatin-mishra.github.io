@@ -1,0 +1,35 @@
+# Site settings — used by the blog layouts. index.html stays hand-written.
+title: Jatin Mishra
+tagline: Backend Engineer · Agent Reliability
+description: >-
+  Notes on backend systems, durable workflows and making AI agents reliable
+  in production.
+author: Jatin Mishra
+url: https://jatin-mishra.github.io
+baseurl: ""
+timezone: Asia/Kolkata
+
+# A post's folder is its URL: blog/agents/mcp/_posts/2026-01-05-my-post.md
+# is served at /blog/agents/mcp/my-post/
+permalink: /:categories/:title/
+defaults:
+  - scope: { path: "", type: posts }
+    values:
+      layout: post
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+feed:
+  path: /blog/feed.xml
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor

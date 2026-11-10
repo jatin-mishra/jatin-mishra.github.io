@@ -1,0 +1,77 @@
+---
+layout: default
+---
+{%- comment -%}
+  Lists every post under this folder (including sub-folders) plus links to
+  the sub-topics that have posts. Used by blog/index.html and by the
+  index.html in each topic folder.
+{%- endcomment -%}
+{%- assign sections = site.pages | where: "layout", "section" | sort: "url" -%}
+<section class="blog-hero">
+  <div class="container container--narrow">
+    <p class="eyebrow crumbs">
+      {%- if page.url == "/blog/" -%}
+      Blog
+      {%- else -%}
+      {%- for s in sections -%}
+        {%- if page.url contains s.url and s.url != page.url -%}
+        <a href="{{ s.url }}">{{ s.title | escape }}</a>
+        {%- endif -%}
+      {%- endfor -%}
+      <span>{{ page.title | escape }}</span>
+      {%- endif -%}
+    </p>
+    <h1>{% if page.heading %}{{ page.heading }}{% else %}{{ page.title | escape }}{% endif %}</h1>
+    {%- if page.description %}
+    <p class="lead">{{ page.description | escape }}</p>
+    {%- endif %}
+
+    {%- capture topics -%}
+      {%- for s in sections -%}
+        {%- assign rest = s.url | remove_first: page.url -%}
+        {%- assign slug = rest | remove: "/" -%}
+        {%- assign direct = slug | append: "/" -%}
+        {%- if s.url contains page.url and slug != "" and rest == direct -%}
+          {%- assign count = 0 -%}
+          {%- for post in site.posts -%}{%- if post.url contains s.url -%}{%- assign count = count | plus: 1 -%}{%- endif -%}{%- endfor -%}
+          {%- if count > 0 -%}
+          <a href="{{ s.url }}">{{ s.title | escape }} <small>{{ count }}</small></a>
+          {%- endif -%}
+        {%- endif -%}
+      {%- endfor -%}
+    {%- endcapture -%}
+    {%- assign topics = topics | strip -%}
+    {%- if topics != "" %}
+    <nav class="topics" aria-label="Topics">{{ topics }}</nav>
+    {%- endif %}
+  </div>
+</section>
+
+<section class="container container--narrow post-list">
+  {%- assign shown = 0 -%}
+  {%- for post in site.posts -%}
+  {%- unless post.url contains page.url -%}{%- continue -%}{%- endunless -%}
+  {%- assign shown = shown | plus: 1 -%}
+  {%- assign words = post.content | strip_html | number_of_words -%}
+  {%- assign trail = post.categories | join: " / " | remove_first: "blog / " | replace: "-", " " %}
+  <a class="post-card" href="{{ post.url }}">
+    <p class="post-card__meta">
+      <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%-d %b %Y" }}</time>
+      <span aria-hidden="true">·</span>
+      <span>{{ words | plus: 199 | divided_by: 200 }} min read</span>
+      {%- if trail != "" and trail != "blog" %}
+      <span aria-hidden="true">·</span>
+      <span class="post-card__trail">{{ trail | escape }}</span>
+      {%- endif %}
+    </p>
+    <h2>{{ post.title | escape }}</h2>
+    <p class="post-card__desc">{{ post.description | default: post.excerpt | strip_html | normalize_whitespace | truncate: 200 | escape }}</p>
+    {%- if post.tags.size > 0 %}
+    <div class="chips">{% for tag in post.tags %}<span>{{ tag | escape }}</span>{% endfor %}</div>
+    {%- endif %}
+  </a>
+  {%- endfor %}
+  {%- if shown == 0 %}
+  <p class="post-list__empty">No posts here yet. <a href="/blog/">See all posts →</a></p>
+  {%- endif %}
+</section>
