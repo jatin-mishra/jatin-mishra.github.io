@@ -3,7 +3,7 @@ layout: default
 ---
 {%- comment -%}
   Lists every post under this folder (including sub-folders) plus links to
-  the sub-topics that have posts. Used by blog/index.html and by the
+  the sub-topics that have posts. Posts with `hidden: true` are skipped. Used by blog/index.html and by the
   index.html in each topic folder.
 {%- endcomment -%}
 {%- assign sections = site.pages | where: "layout", "section" | sort: "url" -%}
@@ -33,7 +33,7 @@ layout: default
         {%- assign direct = slug | append: "/" -%}
         {%- if s.url contains page.url and slug != "" and rest == direct -%}
           {%- assign count = 0 -%}
-          {%- for post in site.posts -%}{%- if post.url contains s.url -%}{%- assign count = count | plus: 1 -%}{%- endif -%}{%- endfor -%}
+          {%- for post in site.posts -%}{%- if post.url contains s.url and post.hidden != true -%}{%- assign count = count | plus: 1 -%}{%- endif -%}{%- endfor -%}
           {%- if count > 0 -%}
           <a href="{{ s.url }}">{{ s.title | escape }} <small>{{ count }}</small></a>
           {%- endif -%}
@@ -51,6 +51,7 @@ layout: default
   {%- assign shown = 0 -%}
   {%- for post in site.posts -%}
   {%- unless post.url contains page.url -%}{%- continue -%}{%- endunless -%}
+  {%- if post.hidden -%}{%- continue -%}{%- endif -%}
   {%- assign shown = shown | plus: 1 -%}
   {%- assign words = post.content | strip_html | number_of_words -%}
   {%- assign trail = post.categories | join: " / " | remove_first: "blog / " | replace: "-", " " %}

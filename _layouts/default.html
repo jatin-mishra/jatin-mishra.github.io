@@ -8,6 +8,9 @@
   {%- assign meta_image = page.image | default: "/assets/og.jpg" | absolute_url %}
   <title>{{ meta_title | escape }}</title>
   <meta name="description" content="{{ meta_description | escape }}" />
+  {%- if page.hidden %}
+  <meta name="robots" content="noindex" />
+  {%- endif %}
   <link rel="canonical" href="{{ page.url | absolute_url }}" />
   <link rel="icon" type="image/png" href="/assets/favicon.png" />
   <meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}" />

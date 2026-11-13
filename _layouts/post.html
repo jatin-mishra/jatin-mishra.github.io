@@ -35,10 +35,10 @@ layout: default
 
   <footer class="container container--narrow post__footer">
     <div class="post__nav">
-      {%- if page.previous %}
+      {%- if page.previous and page.previous.hidden != true %}
       <a class="post__nav-link" href="{{ page.previous.url }}"><small>← Older</small><span>{{ page.previous.title | escape }}</span></a>
       {%- else %}<span></span>{% endif %}
-      {%- if page.next %}
+      {%- if page.next and page.next.hidden != true %}
       <a class="post__nav-link post__nav-link--next" href="{{ page.next.url }}"><small>Newer →</small><span>{{ page.next.title | escape }}</span></a>
       {%- endif %}
     </div>

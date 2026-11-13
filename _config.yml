@@ -17,6 +17,16 @@ defaults:
     values:
       layout: post
 
+  # ── Hidden posts ────────────────────────────────────────────────────────
+  # A hidden post still works by its URL, but is left out of every listing,
+  # topic count, older/newer link and the sitemap, and is marked noindex.
+  # To hide a post, copy one entry and change the path (path of the .md file).
+  # To show it again, delete or comment out its entry.
+  - scope: { path: "blog/agents/reliability/_posts/2026-11-10-hello-world.md" }
+    values: &hidden { hidden: true, sitemap: false }
+  # - scope: { path: "blog/agents/mcp/_posts/2026-11-13-master-mcp.md" }
+  #   values: *hidden
+
 markdown: kramdown
 kramdown:
   input: GFM

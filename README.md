@@ -36,12 +36,13 @@ Moving a post to another folder changes its URL, so old links to it will break.
 2. Fill in the front matter (`title`, `description`, `tags`) and write the post in Markdown.
 3. Commit and push to `main`. The post is live about a minute later.
 
-What posts support:
+What posts support (see `blog/agents/reliability/_posts/2026-11-10-hello-world.md` for each one in use):
 
 - **Images** — save to `assets/blog/post-name/` and write `![alt text](/assets/blog/post-name/file.png)`. A line of `*italic text*` directly below becomes the caption.
 - **Diagrams** — a fenced code block tagged `mermaid` is rendered in the browser. For hand-drawn diagrams, export an SVG from Excalidraw or draw.io and use it as an image.
 - **Code** — fenced blocks with a language name are highlighted at build time.
 - **Callouts** — a `>` blockquote; add `{: .warn}` on the next line for the amber variant.
+- **Hidden posts** — list the post under "Hidden posts" in `_config.yml`. It stays reachable by its URL but is left out of every listing, the older/newer links and search engines.
 - **Link-preview image** — optional `image: /assets/blog/post-name/cover.png` in the front matter (1200×630). Defaults to `assets/og.jpg`.
 
 Two things to know:
